@@ -58,6 +58,17 @@ const AGENCY_BENEFITS = [
   },
 ];
 
+const GALLERY_SVGS = [
+  <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-cyan-400" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>,
+  <svg key="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-purple-400" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22V8"/><path d="m5 12 7-7 7 7"/></svg>,
+  <svg key="3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-blue-400" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>,
+  <svg key="4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-cyan-300" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>,
+  <svg key="5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-purple-300" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>,
+  <svg key="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-blue-300" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 22 22 22"/></svg>,
+  <svg key="7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-cyan-500" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></svg>,
+  <svg key="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-purple-500" strokeLinecap="round" strokeLinejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg>
+];
+
 export default function Home() {
   const rootRef = useRef<HTMLDivElement>(null);
   const galleryWrapRef = useRef<HTMLDivElement>(null);
@@ -207,8 +218,20 @@ export default function Home() {
 
   return (
     <div ref={rootRef} className="overflow-hidden">
-      <section className="relative overflow-hidden pt-32 pb-24 min-h-[90vh] flex flex-col items-center justify-center">
-        <div className="concentric-bg"></div>
+      <section ref={galleryWrapRef} className="relative overflow-hidden pt-32 pb-24 min-h-screen flex flex-col items-center justify-center">
+        
+        {/* GSAP Flip Gallery Background */}
+        <div className="absolute inset-0 w-full h-full z-0 pointer-events-none flex items-center justify-center">
+          <div className="gallery gallery--bento gallery--switch !h-full" id="gallery-8" ref={galleryRef}>
+            {GALLERY_SVGS.map((svg, i) => (
+              <div key={i} className="gallery__item bg-[#0a0a0a]/80 border border-white/5 backdrop-blur-sm flex items-center justify-center shadow-xl">
+                {svg}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="concentric-bg z-0 opacity-50"></div>
         <div className="mx-auto max-w-4xl text-center relative z-10 px-6 sm:px-8 lg:px-12">
           <h1 className="hero-title text-5xl font-semibold tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl leading-[1.15]">
             <ResponsiveTextReveal text="Design services that feel in-house, not outsourced." />
@@ -227,8 +250,8 @@ export default function Home() {
           <p className="mt-6 text-sm text-white/50 hero-cta">Replies in 24 hours. No obligation.</p>
         </div>
         
-        <div className="absolute bottom-8 left-0 w-full overflow-hidden hero-cta hidden md:block">
-          <div className="marquee-track flex min-w-max items-center gap-16 opacity-50 transition-opacity hover:opacity-100">
+          <div className="absolute bottom-8 left-0 w-full overflow-hidden hero-cta hidden md:block">
+          <div className="marquee-track flex min-w-max items-center gap-16 opacity-50 transition-opacity hover:opacity-100 z-10 relative">
             {LOGOS.concat(LOGOS).map((logo, index) => (
               <div key={`${logo}-${index}`} className="logo-item min-w-[140px] text-center text-sm uppercase tracking-[0.35em] text-white/70">
                 {logo}
@@ -238,26 +261,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GSAP Flip Gallery */}
-      <div className="gallery-wrap" ref={galleryWrapRef}>
-        <div className="gallery gallery--bento gallery--switch" id="gallery-8" ref={galleryRef}>
-          {[
-            "https://assets.codepen.io/16327/portrait-pattern-1.jpg",
-            "https://assets.codepen.io/16327/portrait-image-12.jpg",
-            "https://assets.codepen.io/16327/portrait-image-8.jpg",
-            "https://assets.codepen.io/16327/portrait-pattern-2.jpg",
-            "https://assets.codepen.io/16327/portrait-image-4.jpg",
-            "https://assets.codepen.io/16327/portrait-image-3.jpg",
-            "https://assets.codepen.io/16327/portrait-pattern-3.jpg",
-            "https://assets.codepen.io/16327/portrait-image-1.jpg"
-          ].map((src, i) => (
-            <div key={i} className="gallery__item">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" />
-            </div>
-          ))}
-        </div>
-      </div>
+
 
       <section id="work-section" className="project-slider mt-20 overflow-hidden px-6 pb-24 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl">
