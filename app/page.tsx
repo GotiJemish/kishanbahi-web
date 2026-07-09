@@ -6,6 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Flip } from "gsap/Flip";
 import Link from "next/link";
 import ResponsiveTextReveal from "./components/ResponsiveTextReveal";
+import CtaSection from "./components/CtaSection";
 
 const CASE_STUDIES = [
   {
@@ -68,6 +69,85 @@ const GALLERY_SVGS = [
   <svg key="7" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-cyan-500" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="22" x2="18" y1="12" y2="12"/><line x1="6" x2="2" y1="12" y2="12"/><line x1="12" x2="12" y1="6" y2="2"/><line x1="12" x2="12" y1="22" y2="18"/></svg>,
   <svg key="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-purple-500" strokeLinecap="round" strokeLinejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/><path d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7"/></svg>
 ];
+
+import TestimonialsSection from "./components/TestimonialsSection";
+
+const TESTIMONIALS_DATA = {
+  title: "What they say about us",
+  subtitle: "We've helped ambitious teams across the globe launch premium digital experiences that drive real results.",
+  rows: [
+    {
+      id: "row1",
+      speed: "35s",
+      direction: "left",
+      testimonials: [
+        {
+          id: "t1",
+          quote: "They completely transformed our brand identity. The new digital experience feels incredibly premium and aligns perfectly with our vision.",
+          authorName: "Sarah Jenkins",
+          authorTitle: "CMO at Lumina",
+          avatarUrl: ""
+        },
+        {
+          id: "t2",
+          quote: "The motion design and interaction details they added to our product made a huge difference. User engagement is up 40%.",
+          authorName: "David Chen",
+          authorTitle: "Product Lead at FinFlow",
+          avatarUrl: ""
+        },
+        {
+          id: "t3",
+          quote: "An absolute pleasure to work with. They don't just execute, they partner with you to find the absolute best solution.",
+          authorName: "Elena Rodriguez",
+          authorTitle: "Founder at Studio 9",
+          avatarUrl: ""
+        },
+        {
+          id: "t4",
+          quote: "Their attention to detail is unmatched. Every micro-interaction is perfectly tuned and the final product is stunning.",
+          authorName: "James Wilson",
+          authorTitle: "CTO at Nexus",
+          avatarUrl: ""
+        }
+      ]
+    },
+    {
+      id: "row2",
+      speed: "45s",
+      direction: "right",
+      testimonials: [
+        {
+          id: "t5",
+          quote: "They delivered a masterclass in UI/UX design. The interface is intuitive, beautiful, and performs flawlessly.",
+          authorName: "Anna Kowalski",
+          authorTitle: "VP Design at Echo",
+          avatarUrl: ""
+        },
+        {
+          id: "t6",
+          quote: "We needed a complete overhaul of our digital presence in 6 weeks. They delivered beyond our expectations.",
+          authorName: "Marcus Thorne",
+          authorTitle: "Director at Vertex",
+          avatarUrl: ""
+        },
+        {
+          id: "t7",
+          quote: "The team’s strategic approach to design helped us uncover user friction points we didn't even know existed.",
+          authorName: "Priya Patel",
+          authorTitle: "Head of Growth at Bolt",
+          avatarUrl: ""
+        },
+        {
+          id: "t8",
+          quote: "Outstanding quality and incredible speed. It truly felt like having an elite in-house design team.",
+          authorName: "Tom Harrison",
+          authorTitle: "CEO at Vanguard",
+          avatarUrl: ""
+        }
+      ]
+    }
+  ]
+};
 
 export default function Home() {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -350,22 +430,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-t border-white/10 px-6 py-24 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-7xl text-center">
-          <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">Get started</p>
-          <h2 className="mt-6 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-            Ready to launch something premium with a creative studio you can trust?
-          </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/70">
-            Bring your brand, product and digital presence together with a polished design direction and motion-led interface system.
-          </p>
-          <div className="mt-10 magnetic-wrap">
-            <div className="inline-flex rounded-full border border-white/10 glass-panel px-8 py-4 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:border-cyan-300/40 hover:bg-white/10">
-              Start a project
-            </div>
-          </div>
-        </div>
-      </section>
+      <TestimonialsSection data={TESTIMONIALS_DATA} />
+      <CtaSection />
     </div>
   );
 }

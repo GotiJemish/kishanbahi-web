@@ -3,6 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CtaSection from "../components/CtaSection";
 
 const values = [
   {
@@ -111,6 +112,10 @@ export default function AboutPage() {
             ))}
           </div>
         </section>
+      </div>
+      
+      <div className="mt-20">
+        <CtaSection />
       </div>
     </div>
   );
