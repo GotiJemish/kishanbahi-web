@@ -3,8 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import Link from "next/link";
-import { Divider } from "rsuite";
-import 'rsuite/dist/rsuite.min.css';
 
 const services = [
   {
