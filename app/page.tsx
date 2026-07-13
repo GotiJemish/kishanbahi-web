@@ -211,19 +211,21 @@ export default function Home() {
       }
 
       // Horizontal Scroll with Parallax Depth
-      const projects = gsap.utils.toArray(".project-card");
-      gsap.to(projects, {
-        xPercent: -100 * (projects.length - 1),
-        ease: "none",
-        scrollTrigger: {
-          trigger: ".project-slider",
-          pin: true,
-          scrub: 1,
-          snap: 1 / (projects.length - 1),
-          start: "top top",
-          end: () => "+=" + (document.querySelector(".project-slider") as HTMLElement)?.offsetWidth * 2,
-        },
-      });
+      const projectRow = document.querySelector(".project-row") as HTMLElement;
+      if (projectRow) {
+        gsap.to(projectRow, {
+          x: () => -(projectRow.scrollWidth - window.innerWidth),
+          ease: "none",
+          scrollTrigger: {
+            trigger: ".project-slider",
+            pin: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+            start: "top top",
+            end: () => "+=" + (projectRow.scrollWidth - window.innerWidth),
+          },
+        });
+      }
 
       gsap.from(".logo-item", {
         y: 30,
@@ -343,37 +345,145 @@ export default function Home() {
 
 
 
-      <section id="work-section" className="project-slider mt-20 overflow-hidden px-6 pb-24 sm:px-8 lg:px-12">
-        <div className="mx-auto max-w-7xl">
-          <div className="flex justify-between pb-8">
-            <div>
-              <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">Work</p>
-              <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-                Case studies built with storytelling, motion and premium detail.
-              </h2>
+      <section id="work-section" className="project-slider bg-[#06080f] overflow-hidden relative min-h-screen">
+        <div className="project-row flex flex-col md:flex-row h-auto md:h-screen w-full md:w-max items-center gap-16 px-6 md:px-[10vw] py-20 md:py-0">
+          
+          {/* Left Mobile Card - Solent Rib Charter */}
+          <article className="project-card shrink-0 flex h-[60vh] md:h-[75vh] w-full md:w-[400px] flex-col overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#111] hover-glow relative group">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544421115-4fa8172c72b2?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 transition-transform duration-700 group-hover:scale-105"></div>
+            <div className="relative z-10 flex-1 bg-gradient-to-b from-yellow-600/40 via-black/60 to-black p-10 flex flex-col justify-between">
+              <div>
+                <p className="text-xs uppercase tracking-[0.35em] text-white/70">App Design</p>
+                <h3 className="mt-4 text-4xl font-semibold text-white tracking-tight leading-none">Solent Rib<br/>Charter</h3>
+                <p className="mt-4 text-white/80 font-medium">Europe's largest<br/>fleet of Ribs.</p>
+              </div>
+              <button className="mt-8 bg-yellow-500 text-black px-6 py-3 rounded-full font-bold self-start hover:bg-yellow-400 transition-colors">
+                Get started
+              </button>
             </div>
-            <div className="hidden text-sm uppercase tracking-[0.35em] text-white/40 md:block">Scroll to view more</div>
-          </div>
-        </div>
+          </article>
 
-        <div className="project-row flex flex-col sm:flex-row gap-8 px-6 sm:px-0">
-          {CASE_STUDIES.map((item) => (
-            <article key={item.title} className="project-card min-w-[78vw] rounded-[2.5rem] border border-white/10 glass-panel p-10 sm:min-w-[45vw] hover-glow">
-              <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">Case study</p>
-              <h3 className="mt-6 text-3xl font-semibold leading-snug text-white sm:text-4xl">{item.title}</h3>
-              <p className="mt-6 text-base leading-8 text-white/70">{item.summary}</p>
-              <div className="mt-10 grid gap-5 sm:grid-cols-2">
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                  <p className="text-xs uppercase tracking-[0.35em] text-cyan-300/80">Focus</p>
-                  <p className="mt-4 text-sm text-white/70">Concept, motion and conversion-led UI.</p>
+          {/* Center Column with Text and 2 Cards */}
+          <div className="relative shrink-0 flex h-auto md:h-[90vh] w-full md:w-[700px] flex-col justify-between gap-8 md:gap-0">
+            {/* Top Card - Yacht */}
+            <article className="project-card h-[40vh] md:h-[35%] w-full md:w-[70%] md:self-end overflow-hidden rounded-[2rem] border border-white/10 bg-[#111] hover-glow relative group">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-50 transition-transform duration-700 group-hover:scale-105"></div>
+              <div className="relative z-10 h-full w-full bg-gradient-to-t from-blue-900/80 via-transparent to-transparent p-8 flex flex-col justify-end">
+                <div>
+                  <h3 className="text-3xl font-semibold text-white tracking-wide">ANYA</h3>
+                  <p className="mt-1 text-xs text-white/70 uppercase tracking-widest">Sunseeker 86 Motor Yacht</p>
                 </div>
-                <div className="rounded-[1.75rem] border border-white/10 bg-white/5 p-6">
-                  <p className="text-xs uppercase tracking-[0.35em] text-cyan-300/80">Outcome</p>
-                  <p className="mt-4 text-sm text-white/70">Enhanced clarity, premium feel and stronger funnel flow.</p>
+                <div className="mt-4 flex gap-6 text-xs text-white/80 uppercase tracking-widest border-t border-white/20 pt-4">
+                  <span>4 Cabins</span>
+                  <span>2020</span>
                 </div>
               </div>
             </article>
-          ))}
+            
+            {/* Center Text */}
+            <div className="project-card flex flex-col items-center justify-center text-center my-8 md:my-0 order-first md:order-none">
+              <p className="text-xl text-gray-400 mb-2 font-medium">What we do</p>
+              <h2 className="text-6xl font-semibold text-white sm:text-8xl tracking-[-0.04em]">Showcase</h2>
+              <div className="mt-8 text-white/50 border border-white/10 rounded-full px-6 py-2 text-sm flex items-center gap-2 backdrop-blur-sm">
+                Scroll to explore <span className="text-lg">→</span>
+              </div>
+            </div>
+
+            {/* Bottom Card - Car */}
+            <article className="project-card h-[40vh] md:h-[35%] w-full md:w-[70%] md:self-start overflow-hidden rounded-[2rem] border border-white/10 bg-[#111] hover-glow relative group">
+              <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-60 transition-transform duration-700 group-hover:scale-105"></div>
+              <div className="relative z-10 h-full w-full bg-gradient-to-t from-red-900/80 via-transparent to-transparent p-8 flex flex-col justify-end">
+                <h3 className="text-3xl font-semibold text-white tracking-wider">AERODYNAMICS</h3>
+              </div>
+            </article>
+          </div>
+
+          {/* Right Mobile Card - Wilderness */}
+          <article className="project-card shrink-0 flex h-[60vh] md:h-[75vh] w-full md:w-[400px] flex-col overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#111] hover-glow relative group">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-50 transition-transform duration-700 group-hover:scale-105"></div>
+            <div className="relative z-10 flex-1 bg-gradient-to-b from-black/80 via-transparent to-black p-10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="text-sm font-semibold text-white tracking-widest uppercase">Wilderness</span>
+                  <button className="bg-orange-500 text-black text-[10px] font-bold px-3 py-1.5 rounded-sm uppercase tracking-wider">
+                    View
+                  </button>
+                </div>
+              </div>
+              <div>
+                <p className="text-xs uppercase tracking-[0.35em] text-white/70 mb-2">Botswana</p>
+                <h3 className="text-4xl font-semibold text-white leading-tight">Experience<br/>safari magic</h3>
+                <p className="mt-4 text-white/80">Discover Earth's ultimate, untamed places.</p>
+              </div>
+            </div>
+          </article>
+
+          {/* Text Cards Column */}
+          <div className="relative shrink-0 flex h-auto md:h-[90vh] w-full md:w-[600px] flex-col justify-center gap-12 md:gap-24">
+            {/* Top Text Card */}
+            <article className="project-card self-end w-full md:w-[90%] rounded-[2rem] border border-white/10 bg-[#161616] p-10 hover-glow">
+              <p className="text-xs font-semibold text-purple-400 mb-6 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                High-Performing Website
+              </p>
+              <h3 className="text-3xl font-semibold text-white leading-snug tracking-tight">
+                Modernising a group of sites<br/>for a marine services provider
+              </h3>
+              <p className="mt-6 text-white/60 leading-relaxed text-sm">
+                Breaking key pages into modular components allowed us to build a shared design system.
+              </p>
+              <button className="mt-8 flex items-center gap-4 text-sm font-semibold text-white bg-white/5 border border-white/10 rounded-full px-6 py-3 hover:bg-white/10 transition-colors">
+                View Project <span>→</span>
+              </button>
+            </article>
+
+            {/* Bottom Text Card */}
+            <article className="project-card self-start w-full md:w-[90%] rounded-[2rem] border border-white/10 bg-[#161616] p-10 hover-glow">
+              <p className="text-xs font-semibold text-purple-400 mb-6 flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-purple-400"></span>
+                High-Performing Website
+              </p>
+              <h3 className="text-3xl font-semibold text-white leading-snug tracking-tight">
+                Optimising conversion<br/>without compromising luxury
+              </h3>
+              <p className="mt-6 text-white/60 leading-relaxed text-sm">
+                We redesigned user journeys across the site to make them smoother and more intuitive.
+              </p>
+              <button className="mt-8 flex items-center gap-4 text-sm font-semibold text-white bg-white/5 border border-white/10 rounded-full px-6 py-3 hover:bg-white/10 transition-colors">
+                View Project <span>→</span>
+              </button>
+            </article>
+          </div>
+
+          {/* Right Desktop Mockup Card */}
+          <article className="project-card shrink-0 flex h-[50vh] md:h-[85vh] w-full md:w-[1100px] flex-col overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#111] hover-glow relative group">
+            <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544421115-4fa8172c72b2?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-70 transition-transform duration-700 group-hover:scale-105"></div>
+            
+            {/* Fake Browser Header */}
+            <div className="relative z-10 w-full bg-[#1a1a1a] border-b border-white/10 px-6 py-4 flex items-center gap-4">
+              <div className="flex gap-2.5">
+                <div className="w-3.5 h-3.5 rounded-full bg-white/20"></div>
+                <div className="w-3.5 h-3.5 rounded-full bg-white/20"></div>
+                <div className="w-3.5 h-3.5 rounded-full bg-white/20"></div>
+              </div>
+              <div className="flex-1 bg-black/40 border border-white/5 rounded-md h-8 max-w-xl mx-auto flex items-center px-4">
+                <span className="text-white/30 text-xs">solentribcharter.co.uk</span>
+              </div>
+            </div>
+            
+            {/* Inner Content */}
+            <div className="relative z-10 flex-1 bg-gradient-to-r from-black/90 via-black/40 to-transparent p-16 flex flex-col justify-center">
+              <div className="max-w-2xl">
+                <p className="text-sm font-semibold text-yellow-500 mb-4 tracking-wider">Welcome to Solent Rib Charter</p>
+                <h3 className="text-6xl font-semibold text-white tracking-tight leading-tight">Europe's largest fleet of Ribs</h3>
+                <p className="mt-6 text-xl text-white/80">A market leading provider of Rib Hire, Rib Charter, Commercial Rib Charter and Bareboat Rib Hire services.</p>
+                <button className="mt-10 bg-yellow-500 text-black px-8 py-4 rounded-full font-bold hover:bg-yellow-400 transition-colors">
+                  Get started
+                </button>
+              </div>
+            </div>
+          </article>
+          
         </div>
       </section>
 
