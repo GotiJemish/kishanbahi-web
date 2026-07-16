@@ -83,25 +83,28 @@ export default function ResponsiveTextReveal({
     if (!trigger) return;
 
     const ctx = gsap.context(() => {
-      gsap.fromTo(
+      gsap.to(
         element.querySelectorAll(".mask-inner"),
-        { yPercent: 100 },
         {
           yPercent: 0,
+          y: 0, // Ensure translateY is reset
           duration: 1,
           ease: "power4.out",
           stagger: 0.06,
           scrollTrigger: {
             trigger,
-            start: "top 90%",
+            start: "top 95%", // trigger slightly earlier
             toggleActions: "play reverse play reverse",
           },
         }
       );
+      
+      // Refresh ScrollTrigger to ensure positions are correct after lines recalculation
+      requestAnimationFrame(() => ScrollTrigger.refresh());
     }, element);
 
     return () => ctx.revert();
-  }, [triggerSelector]);
+  }, [triggerSelector, lines]);
 
   return (
     <div

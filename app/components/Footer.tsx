@@ -12,7 +12,7 @@ export default function Footer() {
     <footer className="border-t border-white/10 bg-[#050505] px-6 py-10 text-white/60 sm:px-8 lg:px-12">
       <div className="mx-auto flex max-w-7xl flex-col gap-6 sm:flex-row sm:items-center sm:justify-between">
         <div className="space-y-3">
-          <p className="text-sm uppercase tracking-[0.35em] text-white/80">Kishan Studio</p>
+          <p className="text-sm uppercase tracking-[0.35em] text-white/80">Fremevora</p>
           <p className="max-w-xl text-sm leading-6 text-white/60">
             Premium web design, UI/UX systems and launch-ready product experiences for ambitious teams.
           </p>
@@ -26,7 +26,7 @@ export default function Footer() {
         </div>
       </div>
       <div className="mt-10 border-t border-white/5 pt-6 text-sm text-white/40">
-        © 2026 Kishan Studio. Built for bold brands.
+        © 2026 Fremevora. Built for bold brands.
       </div>
     </footer>
   );

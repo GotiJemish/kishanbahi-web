@@ -5,9 +5,9 @@ import Footer from "./components/Footer";
 import LenisScroller from "./components/LenisScroller";
 
 export const metadata: Metadata = {
-  title: "Kishan Studio — Web Design & UI/UX",
+  title: "Fremevora — Web Design & UI/UX",
   description:
-    "Kishan Studio builds premium web design, UI/UX, and product experiences with motion-led storytelling.",
+    "Fremevora builds premium web design, UI/UX, and product experiences with motion-led storytelling.",
 };
 
 export default function RootLayout({

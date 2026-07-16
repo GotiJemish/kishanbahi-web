@@ -31,31 +31,31 @@ const LOGOS = ["HSBC", "Octopus", "BIMA", "Net", "Capco", "Threecolts"];
 
 const STUDIO_VALUES = [
   {
-    title: "Design with clarity",
-    description: "We define purposeful interactions that remove friction and make products feel easy to use.",
+    title: "USER-CENTERED UI/UX DESIGN",
+    description: "We design intuitive interfaces that simplify user journeys, improve engagement, and create seamless digital experiences across every device.",
   },
   {
-    title: "Motion that matters",
-    description: "Every transition and reveal supports user focus, hierarchy, and brand expression.",
+    title: "MODERN WEB DEVELOPMENT",
+    description: "From responsive websites to custom web applications, we build secure, scalable, and high-performance solutions using the latest technologies.",
   },
   {
-    title: "Launch-ready delivery",
-    description: "From systems to UI assets, we hand over polished work that’s ready for production.",
+    title: "SEO & PERFORMANCE FIRST",
+    description: "Every project is optimized for speed, search engines, accessibility, and conversions to help your business grow online.",
   },
 ];
 
 const AGENCY_BENEFITS = [
   {
-    title: "Direct access to experts",
-    detail: "Work with senior creatives, not account handlers.",
+    title: "Strategic Design Approach",
+    detail: "Every project begins with research, planning, and a user-first strategy that ensures meaningful digital experiences.",
   },
   {
-    title: "Faster delivery",
-    detail: "No slow approvals. Design work moves at product speed.",
+    title: "Fast & Scalable Development",
+    detail: "We develop responsive, secure, and future-ready websites that perform flawlessly across all devices.",
   },
   {
-    title: "Premium brand focus",
-    detail: "Every touchpoint is crafted for confidence and credibility.",
+    title: "Long-Term Digital Partnership",
+    detail: "From launch to ongoing support, Framevora helps your business evolve with continuous improvements and innovative digital solutions.",
   },
 ];
 
@@ -73,8 +73,8 @@ const GALLERY_SVGS = [
 import TestimonialsSection from "./components/TestimonialsSection";
 
 const TESTIMONIALS_DATA = {
-  title: "What they say about us",
-  subtitle: "We've helped ambitious teams across the globe launch premium digital experiences that drive real results.",
+  title: "Trusted by Brands. Driven by Results.",
+  subtitle: "Framevora partners with startups, businesses, and enterprises to create exceptional UI/UX designs and high-performance websites. Our clients value our creativity, technical expertise, and commitment to delivering digital solutions that make a real impact.",
   rows: [
     {
       id: "row1",
@@ -165,12 +165,7 @@ export default function Home() {
     mm.add("(min-width: 800px)", () => {
       // Desktop Animations
       
-      gsap.from(".hero-title .mask-inner", {
-        yPercent: 100,
-        duration: 1.2,
-        ease: "power4.out",
-        stagger: 0.05,
-      });
+
 
       gsap.from(".hero-subtitle, .hero-cta", {
         y: 20,
@@ -316,10 +311,10 @@ export default function Home() {
         <div className="concentric-bg z-0 opacity-50"></div>
         <div className="mx-auto max-w-4xl text-center relative z-10 px-6 sm:px-8 lg:px-12">
           <h1 className="hero-title text-5xl font-semibold tracking-[-0.03em] text-white sm:text-6xl lg:text-7xl leading-[1.15]">
-            <ResponsiveTextReveal text="Design services that feel in-house, not outsourced." />
+            <ResponsiveTextReveal text="We Design Experiences. We Develop Success." />
           </h1>
           <div className="hero-subtitle mx-auto mt-8 max-w-xl text-lg leading-8 text-white/70">
-            <ResponsiveTextReveal text="Senior design expertise, embedded in your team." />
+            <ResponsiveTextReveal text="Framevora is a leading UI/UX design and web development agency creating intuitive digital experiences, high-performance websites, and scalable solutions that help businesses grow faster." />
           </div>
           <div className="mt-10 magnetic-wrap hero-cta">
             <Link
@@ -490,9 +485,9 @@ export default function Home() {
       <section className="border-t border-white/10 px-6 py-24 sm:px-8 lg:px-12">
         <div className="mx-auto max-w-7xl space-y-12">
           <div className="text-center">
-            <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">Trusted by</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-white sm:text-5xl">
-              Strong brands choose work that feels considered and purposeful.
+            <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">TRUSTED BY GROWING BRANDS</p>
+            <h2 className="mt-4 text-4xl text-center font-semibold tracking-[-0.04em] text-white sm:text-5xl">
+              Innovative Businesses Choose Framevora to Design, Develop & Scale Their Digital Presence."
             </h2>
           </div>
           <div className="logo-strip overflow-hidden rounded-[2rem] border border-white/10 glass-panel px-8 py-8">
@@ -511,13 +506,14 @@ export default function Home() {
         <div className="mx-auto max-w-7xl space-y-12">
           <div className="grid gap-10 lg:grid-cols-[0.45fr_0.55fr] lg:items-end">
             <div className="space-y-6">
-              <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">Why we exist</p>
+              <p className="text-sm uppercase tracking-[0.35em] text-cyan-300/80">WHY FRAMEVORA</p>
               <h2 className="text-5xl font-semibold tracking-[-0.04em] text-white sm:text-6xl">
-                We make digital products and websites feel thoughtful, clear and beautifully framed.
+                Designing Intuitive Experiences. Developing Powerful Digital Solutions.
               </h2>
               <p className="max-w-xl text-lg leading-8 text-white/70">
-                Our work sits at the intersection of product strategy, UI design and motion-led systems so the experience always looks and feels premium.
+                We help startups, businesses, and enterprises transform ideas into exceptional digital products through strategic UI/UX design, custom web development, and performance-driven solutions that create lasting impact.
               </p>
+              
             </div>
             <div className="value-grid grid gap-6 sm:grid-cols-2">
               {STUDIO_VALUES.map((value) => (

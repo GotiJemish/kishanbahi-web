@@ -55,7 +55,7 @@ export default function SiteNav() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 sm:px-8 lg:px-12">
         <div className="magnetic-wrap">
           <Link href="/" className="text-sm font-semibold uppercase tracking-[0.35em] text-white/90">
-            STUDIO
+            FREMEVORA
           </Link>
         </div>
         <nav className="hidden items-center gap-10 text-sm uppercase tracking-[0.3em] text-white/70 md:flex">
