@@ -60,9 +60,11 @@ const AGENCY_BENEFITS = [
 ];
 
 const GALLERY_SVGS = [
-  <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-cyan-400" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>,
+  <svg key="1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-cyan-400" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20" /><path d="M2 12h20" /></svg>,
+  
   <svg key="2" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-purple-400" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22V8"/><path d="m5 12 7-7 7 7"/></svg>,
-  <svg key="3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-blue-400" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>,
+  <svg key="3" viewBox="0 0 24 24" fill="none" className="w-1/2 h-1/2 opacity-30 text-white" xmlns="http://www.w3.org/2000/svg"><path d="M89.4512 0.399067C119.378 -2.67959 147.771 12.331 165.483 35.8815C160.77 39.2265 155.994 42.477 151.196 45.7174C138.951 28.14 118.763 16.6618 95.9326 16.6618C58.5835 16.6618 28.3057 47.3788 28.3057 85.2692C28.3057 98.6743 32.0966 111.181 38.6484 121.748C26.0695 130.603 11.8694 139.946 0 148.458C15.0013 128.959 11.5675 117.069 9.33105 95.8375C6.70251 72.9738 13.4874 50.0238 28.1377 32.2702C44.4259 12.2489 64.2447 2.99065 89.4512 0.399067Z" fill="cuerrntColor" /><path d="M106.496 176.602C76.5685 179.681 48.1761 164.67 30.4634 141.12C35.1766 137.775 39.9526 134.524 44.7505 131.284C56.996 148.861 77.1836 160.34 100.014 160.34C137.363 160.34 167.641 129.623 167.641 91.7323C167.641 78.3272 163.85 65.8205 157.298 55.2538C169.877 46.3989 184.077 37.0558 195.947 28.5438C180.945 48.0428 184.379 59.9326 186.616 81.1639C189.244 104.028 182.459 126.978 167.809 144.731C151.521 164.753 131.702 174.011 106.496 176.602Z" fill="cuerrntColor" /></svg>,
+  // <svg key="3" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-blue-400" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="7.5 4.21 12 6.81 16.5 4.21"/><polyline points="7.5 19.79 7.5 14.6 3 12"/><polyline points="21 12 16.5 14.6 16.5 19.79"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg>,
   <svg key="4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-cyan-300" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>,
   <svg key="5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-purple-300" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>,
   <svg key="6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" className="w-1/2 h-1/2 opacity-30 text-blue-300" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 2 22 22 22"/></svg>,
@@ -164,7 +166,7 @@ export default function Home() {
 
     mm.add("(min-width: 800px)", () => {
       // Desktop Animations
-      
+
 
 
       gsap.from(".hero-subtitle, .hero-cta", {
@@ -179,10 +181,10 @@ export default function Home() {
       // GSAP Flip Gallery
       const galleryElement = galleryRef.current;
       const galleryWrap = galleryWrapRef.current;
-      
+
       if (galleryElement && galleryWrap) {
         const galleryItems = galleryElement.querySelectorAll(".gallery__item");
-        
+
         galleryElement.classList.remove("gallery--final");
         galleryElement.classList.add("gallery--final");
         const flipState = Flip.getState(galleryItems);
@@ -268,7 +270,7 @@ export default function Home() {
         stagger: 0.05,
         ease: "power3.out",
       });
-      
+
       gsap.from(".project-card", {
         y: 30,
         opacity: 0,
@@ -278,7 +280,7 @@ export default function Home() {
           start: "top 80%",
         }
       });
-      
+
       gsap.from(".value-card, .agency-card", {
         y: 30,
         opacity: 0,
@@ -296,7 +298,7 @@ export default function Home() {
   return (
     <div ref={rootRef} className="overflow-hidden">
       <section ref={galleryWrapRef} className="relative overflow-hidden pt-32 pb-24 min-h-screen flex flex-col items-center justify-center">
-        
+
         {/* GSAP Flip Gallery Background */}
         <div className="absolute inset-0 w-full h-full z-0 pointer-events-none flex items-center justify-center">
           <div className="gallery gallery--bento gallery--switch !h-full" id="gallery-8" ref={galleryRef}>
@@ -326,8 +328,8 @@ export default function Home() {
           </div>
           <p className="mt-6 text-sm text-white/50 hero-cta">Replies in 24 hours. No obligation.</p>
         </div>
-        
-          <div className="absolute bottom-8 left-0 w-full overflow-hidden hero-cta hidden md:block">
+
+        <div className="absolute bottom-8 left-0 w-full overflow-hidden hero-cta hidden md:block">
           <div className="marquee-track flex min-w-max items-center gap-16 opacity-50 transition-opacity hover:opacity-100 z-10 relative">
             {LOGOS.concat(LOGOS).map((logo, index) => (
               <div key={`${logo}-${index}`} className="logo-item min-w-[140px] text-center text-sm uppercase tracking-[0.35em] text-white/70">
@@ -342,15 +344,15 @@ export default function Home() {
 
       <section id="work-section" className="project-slider bg-[#06080f] overflow-hidden relative min-h-screen">
         <div className="project-row flex flex-col md:flex-row h-auto md:h-screen w-full md:w-max items-center gap-16 px-6 md:px-[10vw] py-20 md:py-0">
-          
+
           {/* Left Mobile Card - Solent Rib Charter */}
           <article className="project-card shrink-0 flex h-[60vh] md:h-[75vh] w-full md:w-[400px] flex-col overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#111] hover-glow relative group">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544421115-4fa8172c72b2?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 transition-transform duration-700 group-hover:scale-105"></div>
             <div className="relative z-10 flex-1 bg-gradient-to-b from-yellow-600/40 via-black/60 to-black p-10 flex flex-col justify-between">
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-white/70">App Design</p>
-                <h3 className="mt-4 text-4xl font-semibold text-white tracking-tight leading-none">Solent Rib<br/>Charter</h3>
-                <p className="mt-4 text-white/80 font-medium">Europe's largest<br/>fleet of Ribs.</p>
+                <h3 className="mt-4 text-4xl font-semibold text-white tracking-tight leading-none">Solent Rib<br />Charter</h3>
+                <p className="mt-4 text-white/80 font-medium">Europe's largest<br />fleet of Ribs.</p>
               </div>
               <button className="mt-8 bg-yellow-500 text-black px-6 py-3 rounded-full font-bold self-start hover:bg-yellow-400 transition-colors">
                 Get started
@@ -374,7 +376,7 @@ export default function Home() {
                 </div>
               </div>
             </article>
-            
+
             {/* Center Text */}
             <div className="project-card flex flex-col items-center justify-center text-center my-8 md:my-0 order-first md:order-none">
               <p className="text-xl text-gray-400 mb-2 font-medium">What we do</p>
@@ -407,7 +409,7 @@ export default function Home() {
               </div>
               <div>
                 <p className="text-xs uppercase tracking-[0.35em] text-white/70 mb-2">Botswana</p>
-                <h3 className="text-4xl font-semibold text-white leading-tight">Experience<br/>safari magic</h3>
+                <h3 className="text-4xl font-semibold text-white leading-tight">Experience<br />safari magic</h3>
                 <p className="mt-4 text-white/80">Discover Earth's ultimate, untamed places.</p>
               </div>
             </div>
@@ -422,7 +424,7 @@ export default function Home() {
                 High-Performing Website
               </p>
               <h3 className="text-3xl font-semibold text-white leading-snug tracking-tight">
-                Modernising a group of sites<br/>for a marine services provider
+                Modernising a group of sites<br />for a marine services provider
               </h3>
               <p className="mt-6 text-white/60 leading-relaxed text-sm">
                 Breaking key pages into modular components allowed us to build a shared design system.
@@ -439,7 +441,7 @@ export default function Home() {
                 High-Performing Website
               </p>
               <h3 className="text-3xl font-semibold text-white leading-snug tracking-tight">
-                Optimising conversion<br/>without compromising luxury
+                Optimising conversion<br />without compromising luxury
               </h3>
               <p className="mt-6 text-white/60 leading-relaxed text-sm">
                 We redesigned user journeys across the site to make them smoother and more intuitive.
@@ -453,7 +455,7 @@ export default function Home() {
           {/* Right Desktop Mockup Card */}
           <article className="project-card shrink-0 flex h-[50vh] md:h-[85vh] w-full md:w-[1100px] flex-col overflow-hidden rounded-[2.5rem] border border-white/10 bg-[#111] hover-glow relative group">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544421115-4fa8172c72b2?auto=format&fit=crop&w=1200&q=80')] bg-cover bg-center opacity-70 transition-transform duration-700 group-hover:scale-105"></div>
-            
+
             {/* Fake Browser Header */}
             <div className="relative z-10 w-full bg-[#1a1a1a] border-b border-white/10 px-6 py-4 flex items-center gap-4">
               <div className="flex gap-2.5">
@@ -465,7 +467,7 @@ export default function Home() {
                 <span className="text-white/30 text-xs">solentribcharter.co.uk</span>
               </div>
             </div>
-            
+
             {/* Inner Content */}
             <div className="relative z-10 flex-1 bg-gradient-to-r from-black/90 via-black/40 to-transparent p-16 flex flex-col justify-center">
               <div className="max-w-2xl">
@@ -478,7 +480,7 @@ export default function Home() {
               </div>
             </div>
           </article>
-          
+
         </div>
       </section>
 
@@ -513,7 +515,7 @@ export default function Home() {
               <p className="max-w-xl text-lg leading-8 text-white/70">
                 We help startups, businesses, and enterprises transform ideas into exceptional digital products through strategic UI/UX design, custom web development, and performance-driven solutions that create lasting impact.
               </p>
-              
+
             </div>
             <div className="value-grid grid gap-6 sm:grid-cols-2">
               {STUDIO_VALUES.map((value) => (
